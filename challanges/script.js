@@ -24,3 +24,19 @@
 
 // const str = JSON.stringify(library);
 // console.log(str);
+
+/*Function Challange*/
+
+// const cel = (deg) => ((deg - 32) * 5) / 9;
+// console.log(cel(32));
+
+// function minMax(arr) {
+//   const x = Math.min(...arr);
+//   const y = Math.max(...arr);
+
+//   return {
+//     x,
+//     y,
+//   };
+// }
+// console.log(minMax([1, 2, 3, 4, 5, 6]));

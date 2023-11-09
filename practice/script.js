@@ -1,5 +1,5 @@
 // Object Literal
-const todo1 = {};
+/* const todo1 = {};
 todo1.task1 = "javascript";
 //Object Constructor
 const todo2 = new Object();
@@ -8,6 +8,7 @@ const tasks = { ...todo1, ...todo2 };
 console.log(tasks);
 console.log(Object.keys(tasks));
 console.log(Object.values(tasks));
+*/
 
 /* JSON - javascript object notation
 
@@ -18,3 +19,29 @@ keys enclosed with double quotes
 convert an object literal into json format using JSON.stringify(tasks)
 convert json format to object literal use JSON.parse(str)
  */
+
+// Functions
+// Declaration, defining, invoking, parameters, arguments
+// creating variable with var is not block scope which is not preferable in working with functions
+// adds variable to global scope
+
+// function declaration, we can invoke it before declaration
+
+function add(num1, num2) {
+  return num1 + num2;
+}
+
+console.log(add(34, 32));
+
+// function expression, pops error if invoke before declaration
+const mix = function (num3, num4) {
+  return num3 + num4;
+};
+console.log(mix(34, 32));
+
+// arrow functions
+
+const sub = (num5, num6) => {
+  return num5 - num6;
+};
+console.log(sub(34, 32));
