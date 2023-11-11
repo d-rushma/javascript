@@ -62,3 +62,8 @@ convert json format to object literal use JSON.parse(str)
 /* Ternary Operator*/
 // const c = 23;
 // c > 20 ? console.log(23) : console.log(2);
+
+const nums = [23, 24, 25];
+for (let i of nums) {
+  console.log(i);
+}
