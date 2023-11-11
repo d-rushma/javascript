@@ -47,10 +47,10 @@ convert json format to object literal use JSON.parse(str)
 // console.log(sub(34, 32));
 
 /* && returns first falsy or last true value */
-a = 10 && 30; // 30 returns first falsy or last true value
-a = 10 && 30 && 40; // 40 returns first falsy or last true value
-a = 10 && 0 && 40; // 0 returns first falsy or last true value
-console.log(a);
+// a = 10 && 30; // 30 returns first falsy or last true value
+// a = 10 && 30 && 40; // 40 returns first falsy or last true value
+// a = 10 && 0 && 40; // 0 returns first falsy or last true value
+// console.log(a);
 
 /* || returns first thruthy or last true value */
 /* ?? returns the right side operand when left is null or undefined */
@@ -60,5 +60,5 @@ console.log(a);
 // ??= assigns right side value only if left side is null or undefined
 
 /* Ternary Operator*/
-const c = 23;
-c > 20 ? console.log(23) : console.log(2);
+// const c = 23;
+// c > 20 ? console.log(23) : console.log(2);
