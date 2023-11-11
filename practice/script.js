@@ -27,21 +27,38 @@ convert json format to object literal use JSON.parse(str)
 
 // function declaration, we can invoke it before declaration
 
-function add(num1, num2) {
-  return num1 + num2;
-}
+// function add(num1, num2) {
+//   return num1 + num2;
+// }
 
-console.log(add(34, 32));
+// console.log(add(34, 32));
 
-// function expression, pops error if invoke before declaration
-const mix = function (num3, num4) {
-  return num3 + num4;
-};
-console.log(mix(34, 32));
+// // function expression, pops error if invoke before declaration
+// const mix = function (num3, num4) {
+//   return num3 + num4;
+// };
+// console.log(mix(34, 32));
 
-// arrow functions
+// // arrow functions
 
-const sub = (num5, num6) => {
-  return num5 - num6;
-};
-console.log(sub(34, 32));
+// const sub = (num5, num6) => {
+//   return num5 - num6;
+// };
+// console.log(sub(34, 32));
+
+/* && returns first falsy or last true value */
+a = 10 && 30; // 30 returns first falsy or last true value
+a = 10 && 30 && 40; // 40 returns first falsy or last true value
+a = 10 && 0 && 40; // 0 returns first falsy or last true value
+console.log(a);
+
+/* || returns first thruthy or last true value */
+/* ?? returns the right side operand when left is null or undefined */
+
+// &&= assigns right side value only if left side operand is truthy
+// ||= assigns right side value only if left side operand is falsy
+// ??= assigns right side value only if left side is null or undefined
+
+/* Ternary Operator*/
+const c = 23;
+c > 20 ? console.log(23) : console.log(2);

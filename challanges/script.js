@@ -40,3 +40,20 @@
 //   };
 // }
 // console.log(minMax([1, 2, 3, 4, 5, 6]));
+
+/* Calculator Challange */
+function calculator(num1, num2, op) {
+  switch (op) {
+    case "+":
+      return num1 + num2;
+    case "-":
+      return num1 - num2;
+    case "*":
+      return num1 * num2;
+    case "/":
+      return num1 / num2;
+    default:
+      return `not an operator`;
+  }
+}
+console.log(calculator(4, 5, "+"));
