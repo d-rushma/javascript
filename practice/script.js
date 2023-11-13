@@ -109,3 +109,68 @@ convert json format to object literal use JSON.parse(str)
 //   .filter((x) => x > 0)
 //   .reduce((acc, curr) => acc + curr, 0);
 // console.log(positiveNumbers);
+
+/* Document Object Model */
+// const text = document.getElementById("main");
+// console.log(text);
+// console.log(text.textContent);
+// // text.innerHTML = "<h3>document object model</h3>";
+// document.querySelector("#main h4").innerText = "Hello";
+// document.getElementById("main").id = "newid";
+// document.getElementById("newid").setAttribute("class", "main");
+
+const parent = document.querySelector(".parent");
+const out = parent.children;
+console.log(out);
+// console.log(parent);
+// const child = Array.from(out);
+// for (let i of child) {
+//   console.log(i.innerText);
+//   console.log(i.tagName);
+//   console.log(i.className);
+// }
+
+// parent.firstElementChild.innerText = "ben";
+// parent.firstElementChild.style.color = "yellow";
+
+// parent.lastElementChild.innerText = "eden";
+// parent.lastElementChild.style.color = "pink";
+
+// const thirdChild = document.querySelector(".child:nth-child(3)");
+// console.log(thirdChild.innerText);
+// const secondChild = thirdChild.previousElementSibling;
+// console.log(secondChild.innerText);
+// const firstChild = secondChild.previousElementSibling;
+// console.log(firstChild.innerText);
+// console.log(firstChild.parentElement);
+
+// const child = document.querySelector(".child");
+// // child.parentElement.style.border = "1px solid black";
+
+/* Insert After  */
+// function insertAfter(newEl, existingEl) {
+//   existingEl.parentElement.insertBefore(newEl, existingEl.nextSibling);
+// }
+// const newEl = document.createElement("h3");
+// newEl.innerText = "rushma";
+
+// const existingEl = document.querySelector(".child:nth-child(1)");
+// insertAfter(newEl, existingEl);
+
+/* Replace content */
+
+// function replaceItem1() {
+//   const firstItem = document.querySelector(".child:nth-child(1)");
+//   firstItem.outerHTML = "<h3>replaced Child1</h3>";
+// }
+// function replaceItem2() {
+//   const firstItem = document.querySelector(".child:nth-child(2)");
+//   const newEl = document.createElement("h3");
+//   newEl.innerText = "replaced Child2";
+//   firstItem.replaceWith(newEl);
+// }
+
+// replaceItem1();
+// replaceItem2();
+
+/* Event Listeners */
