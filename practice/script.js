@@ -63,7 +63,49 @@ convert json format to object literal use JSON.parse(str)
 // const c = 23;
 // c > 20 ? console.log(23) : console.log(2);
 
-const nums = [23, 24, 25];
-for (let i of nums) {
-  console.log(i);
-}
+// const nums = [23, 24, 25];
+// for (let i of nums) {
+//   console.log(i);
+// }
+
+// nums.forEach(function (item) {
+//   console.log(item);
+// });
+
+// const arr = [2, 3, 4, 5, 6];
+// const arrFilter = arr.filter((item) => item % 2 === 0);
+// const arrDouble = arr.map((x) => x * 2);
+// console.log(arrFilter);
+// console.log(arrDouble);
+
+// const people = [
+//   {
+//     firstName: "John",
+//     lastName: "Doe",
+//     email: "john@gmail.com",
+//     phone: "111-111-1111",
+//     age: 30,
+//   },
+//   {
+//     firstName: "Jane",
+//     lastName: "Poe",
+//     email: "jane@gmail.com",
+//     phone: "222-222-2222",
+//     age: 25,
+//   },
+// ];
+
+// const youngPeople = people.map((items) => {
+//   return {
+//     name: items.firstName + items.lastName,
+//     email: items.email,
+//   };
+// });
+// console.log(youngPeople);
+
+// const numbers = [2, -30, 50, 20, -12, -9, 7];
+// const sum = 0;
+// const positiveNumbers = numbers
+//   .filter((x) => x > 0)
+//   .reduce((acc, curr) => acc + curr, 0);
+// console.log(positiveNumbers);
