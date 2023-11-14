@@ -174,3 +174,17 @@ console.log(out);
 // replaceItem2();
 
 /* Event Listeners */
+
+// const child1 = document.querySelector(".child:nth-child(4)");
+// const child2 = document.querySelector(".child:nth-child(2)");
+// function onDrag(e) {
+//   child2.innerText = ` ${e.keyCode}`;
+// }
+// child1.addEventListener("keypress", onDrag);
+
+/*window evenets*/
+window.addEventListener("resize", () => {
+  document.querySelector(
+    "h1"
+  ).innerText = `${window.innerWidth}x${window.innerHeight}`;
+});
