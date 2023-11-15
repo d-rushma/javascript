@@ -3,6 +3,8 @@ const itemInput = document.querySelector(".form-input");
 const itemList = document.querySelector(".items");
 const clearBtn = document.getElementById("clear");
 const filterItems = document.getElementById("filter");
+const formBtn = itemForm.querySelector("button");
+let isEditMode = true;
 function displayItems() {
   const itemsFromStorage = getItemsFromStorage();
   itemsFromStorage.forEach((item) => addItemToDOM(item));
@@ -14,6 +16,18 @@ function addItem(e) {
   if (newItem == " ") {
     alert("Fill out item");
     return;
+  }
+  if (isEditMode) {
+    const itemToEdit = itemList.querySelector(".edit-mode");
+    removeFromStorage(itemToEdit.textContent);
+    itemToEdit.classList.remove("edit-mode");
+    itemToEdit.remove();
+    isEditMode = false;
+  } else {
+    if (preventDuplicate(newItem)) {
+      alert("Item Exists");
+      return;
+    }
   }
   addItemToDOM(newItem);
   addItemToStorage(newItem);
@@ -53,15 +67,38 @@ function createIcon(classes) {
   i.className = classes;
   return i;
 }
+
+function preventDuplicate(item) {
+  const itemsFromStorage = getItemsFromStorage();
+  return itemsFromStorage.includes(item);
+}
 function removeItem(e) {
+  //oclickitem
+  if (e.target.parentElement.classList.contains("remove-item")) {
+    removeListItem(e.target.parentElement.parentElement);
+  } else {
+    setItemToEdit(e.target);
+  }
+}
+
+function removeListItem(item) {
+  // removeitem
   if (confirm("Remove From List")) {
-    const item = e.target.parentElement.parentElement;
-    if (e.target.parentElement.classList.contains("remove-item")) {
-      e.target.parentElement.parentElement.remove();
-    }
+    item.remove();
     removeFromStorage(item.textContent);
     reset();
   }
+}
+
+function setItemToEdit(item) {
+  isEditMode = true;
+  itemList
+    .querySelectorAll("li")
+    .forEach((i) => i.classList.remove("edit-mode"));
+  item.classList.add("edit-mode");
+  formBtn.innerHTML = '<i class="fa-solid fa-pen"></i> Update';
+  formBtn.style.backgroundColor = "red";
+  itemInput.value = item.textContent;
 }
 function removeFromStorage(item) {
   let itemsFromStorage = getItemsFromStorage();
@@ -82,6 +119,9 @@ function reset() {
     clearBtn.style.display = "block";
     filterItems.style.display = "block";
   }
+  formBtn.innerHTML = '<i class="fa-solid fa-plus"></i>Add Item';
+  formBtn.style.backgroundColor = "black";
+  isEditMode = false;
 }
 
 function itemsFilter(e) {
