@@ -3,6 +3,11 @@ const itemInput = document.querySelector(".form-input");
 const itemList = document.querySelector(".items");
 const clearBtn = document.getElementById("clear");
 const filterItems = document.getElementById("filter");
+function displayItems() {
+  const itemsFromStorage = getItemsFromStorage();
+  itemsFromStorage.forEach((item) => addItemToDOM(item));
+  reset();
+}
 function addItem(e) {
   e.preventDefault(); // stops submit
   const newItem = itemInput.value;
@@ -10,13 +15,31 @@ function addItem(e) {
     alert("Fill out item");
     return;
   }
+  addItemToDOM(newItem);
+  addItemToStorage(newItem);
+  reset();
+  itemInput.value = " ";
+}
+function addItemToDOM(item) {
   const li = document.createElement("li");
-  li.appendChild(document.createTextNode(newItem));
+  li.appendChild(document.createTextNode(item));
   const button = createButton("remove-item btn-link text-red");
   li.appendChild(button);
   itemList.appendChild(li);
-  reset();
-  itemInput.value = " ";
+}
+function addItemToStorage(item) {
+  const itemsFromStorage = getItemsFromStorage();
+  itemsFromStorage.push(item);
+  localStorage.setItem("items", JSON.stringify(itemsFromStorage));
+}
+function getItemsFromStorage() {
+  let itemsFromStorage;
+  if (localStorage.getItem("items") === null) {
+    itemsFromStorage = [];
+  } else {
+    itemsFromStorage = JSON.parse(localStorage.getItem("items"));
+  }
+  return itemsFromStorage;
 }
 function createButton(classes) {
   const button = document.createElement("button");
@@ -32,14 +55,22 @@ function createIcon(classes) {
 }
 function removeItem(e) {
   if (confirm("Remove From List")) {
+    const item = e.target.parentElement.parentElement;
     if (e.target.parentElement.classList.contains("remove-item")) {
       e.target.parentElement.parentElement.remove();
     }
+    removeFromStorage(item.textContent);
     reset();
   }
 }
+function removeFromStorage(item) {
+  let itemsFromStorage = getItemsFromStorage();
+  itemsFromStorage = itemsFromStorage.filter((i) => i !== item);
+  localStorage.setItem("items", JSON.stringify(itemsFromStorage));
+}
 function clearAll(e) {
   itemList.innerText = " ";
+  localStorage.removeItem("items");
   reset();
 }
 function reset() {
@@ -69,4 +100,5 @@ itemForm.addEventListener("submit", addItem);
 itemList.addEventListener("click", removeItem);
 clearBtn.addEventListener("click", clearAll);
 filterItems.addEventListener("input", itemsFilter);
+document.addEventListener("DOMContentLoaded", displayItems);
 reset();
