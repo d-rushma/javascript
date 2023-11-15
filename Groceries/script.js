@@ -52,7 +52,21 @@ function reset() {
     filterItems.style.display = "block";
   }
 }
+
+function itemsFilter(e) {
+  const items = itemList.querySelectorAll("li");
+  const newItem = e.target.value.toLowerCase();
+  items.forEach((item) => {
+    const itemName = item.firstChild.textContent.toLowerCase();
+    if (itemName.indexOf(newItem) != -1) {
+      item.style.display = "flex";
+    } else {
+      item.style.display = "none";
+    }
+  });
+}
 itemForm.addEventListener("submit", addItem);
 itemList.addEventListener("click", removeItem);
 clearBtn.addEventListener("click", clearAll);
+filterItems.addEventListener("input", itemsFilter);
 reset();
