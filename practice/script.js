@@ -119,9 +119,9 @@ convert json format to object literal use JSON.parse(str)
 // document.getElementById("main").id = "newid";
 // document.getElementById("newid").setAttribute("class", "main");
 
-const parent = document.querySelector(".parent");
-const out = parent.children;
-console.log(out);
+// const parent = document.querySelector(".parent");
+// const out = parent.children;
+// console.log(out);
 // console.log(parent);
 // const child = Array.from(out);
 // for (let i of child) {
@@ -183,8 +183,12 @@ console.log(out);
 // child1.addEventListener("keypress", onDrag);
 
 /*window evenets*/
-window.addEventListener("resize", () => {
-  document.querySelector(
-    "h1"
-  ).innerText = `${window.innerWidth}x${window.innerHeight}`;
-});
+// window.addEventListener("resize", () => {
+//   document.querySelector(
+//     "h1"
+//   ).innerText = `${window.innerWidth}x${window.innerHeight}`;
+// });
+function toggle(e) {
+  e.target.classList.toggle("danger");
+}
+document.querySelector("button").addEventListener("click", toggle);
