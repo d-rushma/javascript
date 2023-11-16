@@ -10,3 +10,44 @@ setInterval - function executes every time interval
 clearInterval - function clears the interval settime.
 
 /* HTTP Requests */
+HyperText transfer protocol - for sending and receiving data on the web
+- is a client/server protocol, initiated by the client and server will respond
+response could be html, css, js files, images, json or xml.
+- The above activity to fetch data and update a specific part of dom/webpage is usually done using AJAX/XML Http request object.
+- mostly fetch API is used available in browser globbally
+
+// methods
+
+GET request - fetches/retirve data from the server
+POST request - send data to server
+put & patch request - update data on server
+delete request - delete data from a server
+
+// HTTP status codes
+
+400 - Bad request
+401 - unauthorized
+403 - forbidden
+404 - not found
+500 - error on server
+
+200 - success
+201 - created
+204 - no content
+301 - resource moved
+
+
+100 range - continue
+200 range - success
+300 range - redirects
+400 range - client error
+500 range - server error
+
+// readyState 
+
+0 - request not initialized
+1 - server connection established
+2 - request received
+3 - processing request
+4 - request finished and response is ready
+

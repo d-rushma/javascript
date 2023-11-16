@@ -1,3 +1,19 @@
-.danger {
+/* .danger {
   background-color: crimson;
+} */
+
+h1 {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-display: bold;
+}
+ul {
+  list-style: none;
+  line-height: 2em;
+}
+
+ul li {
+  /* border: 2px solid black; */
+  width: 100%;
+  line-height: 2em;
+  border-left: 10px;
 }

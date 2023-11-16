@@ -188,7 +188,43 @@ convert json format to object literal use JSON.parse(str)
 //     "h1"
 //   ).innerText = `${window.innerWidth}x${window.innerHeight}`;
 // });
-function toggle(e) {
-  e.target.classList.toggle("danger");
-}
-document.querySelector("button").addEventListener("click", toggle);
+// function toggle(e) {
+//   e.target.classList.toggle("danger");
+// }
+// document.querySelector("button").addEventListener("click", toggle);
+
+/* getting response and requesting using XMLHttpRequest*/
+// const xhr = new XMLHttpRequest();
+// xhr.open("GET", "movies.json");
+// xhr.onreadystatechange = function () {
+//   if (this.readyState === 4 && this.status === 200) {
+//     console.log(JSON.parse(this.responseText));
+//     const data = JSON.parse(this.responseText);
+//     data.forEach((content) => {
+//       const li = document.createElement("li");
+//       li.innerHTML = `<strong>${content.title} - ${content.year}</strong>`;
+//       document.getElementById("results").appendChild(li);
+//     });
+//   }
+//   // console.log(this.readyState);
+//   // console.log(this.status);
+// };
+// xhr.send();
+
+/* getting response and requesting using API*/
+const xhr = new XMLHttpRequest();
+xhr.open("GET", "https://api.github.com/users");
+xhr.onreadystatechange = function () {
+  if (this.readyState === 4 && this.status === 200) {
+    console.log(JSON.parse(this.responseText));
+    const data = JSON.parse(this.responseText);
+    data.forEach((repo) => {
+      const li = document.createElement("li");
+      li.innerHTML = `<strong>${repo.login} - ${repo.id}</strong>`;
+      document.getElementById("results").appendChild(li);
+    });
+  }
+  // console.log(this.readyState);
+  // console.log(this.status);
+};
+xhr.send();
