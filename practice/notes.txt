@@ -1,0 +1,12 @@
+javascript is single threaded language
+synchronous language with asynchronous capabilities
+// blocks execution of next operation until the present execution completes
+thread has a call stack & memory
+
+/* asynchronous javascript*/
+setTimeout - js works as single thread synchronous language, execution happens sequentially, future operations are blocked in execution until present operations gets completed.
+to make other functions/operations to execute later use setTimeout for delay.
+setInterval - function executes every time interval
+clearInterval - function clears the interval settime.
+
+/* HTTP Requests */
