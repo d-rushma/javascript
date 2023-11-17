@@ -212,19 +212,107 @@ convert json format to object literal use JSON.parse(str)
 // xhr.send();
 
 /* getting response and requesting using API*/
-const xhr = new XMLHttpRequest();
-xhr.open("GET", "https://api.github.com/users");
-xhr.onreadystatechange = function () {
-  if (this.readyState === 4 && this.status === 200) {
-    console.log(JSON.parse(this.responseText));
-    const data = JSON.parse(this.responseText);
-    data.forEach((repo) => {
-      const li = document.createElement("li");
-      li.innerHTML = `<strong>${repo.login} - ${repo.id}</strong>`;
-      document.getElementById("results").appendChild(li);
-    });
-  }
-  // console.log(this.readyState);
-  // console.log(this.status);
-};
-xhr.send();
+// const xhr = new XMLHttpRequest();
+// xhr.open("GET", "https://api.github.com/users");
+// xhr.onreadystatechange = function () {
+//   if (this.readyState === 4 && this.status === 200) {
+//     console.log(JSON.parse(this.responseText));
+//     const data = JSON.parse(this.responseText);
+//     data.forEach((repo) => {
+//       const li = document.createElement("li");
+//       li.innerHTML = `<strong>${repo.login} - ${repo.id}</strong>`;
+//       document.getElementById("results").appendChild(li);
+//     });
+//   }
+//   // console.log(this.readyState);
+//   // console.log(this.status);
+// };
+// xhr.send();
+
+// function getData(endpoint) {
+//   const xhr = new XMLHttpRequest();
+//   xhr.open("GET", endpoint);
+//   xhr.onreadystatechange = function () {
+//     if (this.readyState === 4 && this.status == 200) {
+//       console.log(JSON.parse(this.responseText));
+//     }
+//   };
+//   setTimeout(() => {
+//     xhr.send();
+//   }, Math.floor(Math.random() * 3000) + 1000);
+// }
+// /* this may not print in given order*/
+// // getData("movies.json");
+// // getData("actors.json");
+
+// /* this prints in given order*/
+// getData("movies.json", (data) => {
+//   console.log(data);
+//   getData("actors.json", (data) => {
+//     console.log(data);
+//   });
+// });
+
+/* Callback hells have nested function, not prefer for large executions. promises are intoduced */
+// const promise = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     console.log("Async task complete");
+//     resolve();
+//   }, 1000);
+// });
+// promise.then(() => {
+//   console.log("Promise Consumed..");
+// });
+// const promise2 = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     console.log("Async task complete");
+//     resolve();
+//   }, 1000);
+// }).then(() => console.log("promise2 consumed.."));
+// console.log("hello from global");
+// function getData(endpoint) {
+//   return new Promise((resolve, reject) => {
+//     const xhr = new XMLHttpRequest();
+//     xhr.open("GET", endpoint);
+//     xhr.onreadystatechange = function () {
+//       if (this.readyState === 4 && this.status == 200) {
+//         resolve(JSON.parse(this.responseText));
+//       } else {
+//         reject("something went wrong");
+//       }
+//     }}
+
+//     setTimeout(() => {
+//       xhr.send();
+//     }, Math.floor(Math.random() * 3000) + 1000);
+//   });
+// }
+// const moviesPromise = getData("movies.json");
+// const actorsPromise = getData("actors.json");
+// Promise.all([moviesPromise, actorsPromise]).then((data) => console.log(data));
+
+/* Fetch for json */
+// fetch("movies.json")
+//   .then((response) => {
+//     return response.json();
+//   })
+//   .then((data) => {
+//     console.log(data);
+//   });
+
+/* if no request is mentioned by default it is get request*/
+fetch("movies.json")
+  .then((response) => response.json())
+  .then((data) => {
+    console.log(data);
+  });
+
+/* Fetch for text file */
+fetch("text.txt")
+  .then((response) => response.text())
+  .then((data) => console.log(data));
+
+/* Fetching from piblic API */
+fetch("https://api.github.com/users/d-rushma")
+  .then((response) => response.json())
+  .then((data) => console.log(data));

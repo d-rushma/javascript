@@ -36,7 +36,6 @@ delete request - delete data from a server
 204 - no content
 301 - resource moved
 
-
 100 range - continue
 200 range - success
 300 range - redirects
@@ -50,4 +49,5 @@ delete request - delete data from a server
 2 - request received
 3 - processing request
 4 - request finished and response is ready
+
 
