@@ -301,18 +301,18 @@ convert json format to object literal use JSON.parse(str)
 //   });
 
 /* if no request is mentioned by default it is get request*/
-fetch("movies.json")
-  .then((response) => response.json())
-  .then((data) => {
-    console.log(data);
-  });
+// fetch("movies.json")
+//   .then((response) => response.json())
+//   .then((data) => {
+//     console.log(data);
+//   });
 
-/* Fetch for text file */
-fetch("text.txt")
-  .then((response) => response.text())
-  .then((data) => console.log(data));
+// /* Fetch for text file */
+// fetch("text.txt")
+//   .then((response) => response.text())
+//   .then((data) => console.log(data));
 
-/* Fetching from piblic API */
-fetch("https://api.github.com/users/d-rushma")
-  .then((response) => response.json())
-  .then((data) => console.log(data));
+// /* Fetching from piblic API */
+// fetch("https://api.github.com/users/d-rushma")
+//   .then((response) => response.json())
+//   .then((data) => console.log(data));
