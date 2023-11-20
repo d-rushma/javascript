@@ -316,3 +316,40 @@ convert json format to object literal use JSON.parse(str)
 // fetch("https://api.github.com/users/d-rushma")
 //   .then((response) => response.json())
 //   .then((data) => console.log(data));
+
+// fetch("http://httpstat.us/200")
+//   .then((res) => {
+//     console.log(res);
+//     return res;
+//   })
+//   .then(() => console.log("success"));
+
+// fetch("http://httpstat.us/404")
+//   .then((res) => {
+//     if (!res.ok) {
+//       throw new Error("Not Found");
+//     }
+//     return res;
+//   })
+//   .then(() => {
+//     console.log("success");
+//   })
+//   .catch((error) => {
+//     console.log(error);
+//   });
+
+/* alternative for promises and .thens*/
+// const promise = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     resolve({ name: "rushma", id: 2 });
+//   }, 1000);
+// });
+
+// // promise.then((data) => console.log(data));
+
+// async function getPromise() {
+//   const res = await promise;
+//   console.log(res);
+// }
+
+// getPromise();
