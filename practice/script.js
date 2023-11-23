@@ -354,7 +354,7 @@ convert json format to object literal use JSON.parse(str)
 
 // getPromise();
 
-/* GEO LOCATION */
+/* GEO LOCATION API*/
 
 // function cS(pos) {
 //   console.log(pos);
@@ -365,18 +365,42 @@ convert json format to object literal use JSON.parse(str)
 // const options = {};
 // navigator.geolocation.getCurrentPosition(cS, cE, options);
 
-const map = L.map("map").setView([0, 0], 2);
+// const map = L.map("map").setView([0, 0], 2);
 
-L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-  attribution:
-    '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-}).addTo(map);
+// L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+//   attribution:
+//     '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+// }).addTo(map);
 
-const marker = L.marker([0, 0]).addTo(map);
-navigator.geolocation.getCurrentPosition(function (pos) {
-  const lat = pos.coords.latitude;
-  const long = pos.coords.longitude;
-  marker.setLatLng([lat, long]).update();
-  map.setView([lat, long], 13);
-  marker.bindPopup("<strong>My Location</strong>");
-});
+// const marker = L.marker([0, 0]).addTo(map);
+// navigator.geolocation.getCurrentPosition(function (pos) {
+//   const lat = pos.coords.latitude;
+//   const long = pos.coords.longitude;
+//   marker.setLatLng([lat, long]).update();
+//   map.setView([lat, long], 13);
+//   marker.bindPopup("<strong>My Location</strong>");
+// });
+
+/* CANVAS API */
+// const canvas = document.getElementById("canvas");
+// const ctx = canvas.getContext("2d");
+
+// ctx.fillStyle = "yellow";
+// ctx.fillRect(10, 10, 150, 100); //rectangle
+
+// ctx.fillStyle = "black";
+// ctx.arc(300, 300, 100, 0, Math.PI * 2); //circle
+// ctx.fill();
+
+// ctx.beginPath();
+// ctx.strokeStyle = "pink";
+// ctx.lineWidth = 6;
+// ctx.moveTo(10, 10);
+// ctx.lineTo(300, 300); // staright line
+// ctx.stroke();
+
+// ctx.font = "50px Calibri";
+// ctx.fillStyle = "red";
+// ctx.lineWidth = 4;
+// ctx.fillText("Geometry", 200, 100);
+// ctx.strokeText("Geometry", 200, 500); // takes linewidth of previous
