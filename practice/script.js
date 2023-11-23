@@ -405,4 +405,23 @@ convert json format to object literal use JSON.parse(str)
 // ctx.fillText("Geometry", 200, 100);
 // ctx.strokeText("Geometry", 200, 500); // takes linewidth of previous
 
-/* Request Animation API */
+/* Audio API */
+const audio = document.getElementById("mp3");
+const play = document.getElementById("play");
+const pause = document.getElementById("pause");
+const stop = document.getElementById("stop");
+const time = document.getElementById("current-time");
+const volume = document.getElementById("volume");
+
+play.addEventListener("click", () => audio.play());
+pause.addEventListener("click", () => audio.pause());
+stop.addEventListener("click", () => {
+  audio.pause();
+  audio.currentTime = 0;
+});
+
+audio.addEventListener("timeupdate", () => {
+  time.innerText = audio.currentTime;
+});
+
+volume.addEventListener("change", () => (audio.volume = volume.value));
