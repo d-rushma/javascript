@@ -404,3 +404,5 @@ convert json format to object literal use JSON.parse(str)
 // ctx.lineWidth = 4;
 // ctx.fillText("Geometry", 200, 100);
 // ctx.strokeText("Geometry", 200, 500); // takes linewidth of previous
+
+/* Request Animation API */
