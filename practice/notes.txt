@@ -51,3 +51,15 @@ delete request - delete data from a server
 4 - request finished and response is ready
 
 
+/* WEB API's*/
+- Geo Location
+- Canvas
+- requestAnimationFrame()
+- Web Audio
+- Web Video
+- Web Animations API
+- Speech API
+
+// Geo Location
+
+https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API
