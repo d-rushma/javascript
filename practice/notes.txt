@@ -63,3 +63,13 @@ delete request - delete data from a server
 // Geo Location
 
 https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API
+
+// OOPS
+
+- Abstraction
+- Encapsulation
+- Inheritance
+- Polymorphism
+
+// Prototypes
+

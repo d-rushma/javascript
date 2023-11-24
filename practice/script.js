@@ -406,22 +406,81 @@ convert json format to object literal use JSON.parse(str)
 // ctx.strokeText("Geometry", 200, 500); // takes linewidth of previous
 
 /* Audio API */
-const audio = document.getElementById("mp3");
-const play = document.getElementById("play");
-const pause = document.getElementById("pause");
-const stop = document.getElementById("stop");
-const time = document.getElementById("current-time");
-const volume = document.getElementById("volume");
+// const audio = document.getElementById("mp3");
+// const play = document.getElementById("play");
+// const pause = document.getElementById("pause");
+// const stop = document.getElementById("stop");
+// const time = document.getElementById("current-time");
+// const volume = document.getElementById("volume");
 
-play.addEventListener("click", () => audio.play());
-pause.addEventListener("click", () => audio.pause());
-stop.addEventListener("click", () => {
-  audio.pause();
-  audio.currentTime = 0;
-});
+// play.addEventListener("click", () => audio.play());
+// pause.addEventListener("click", () => audio.pause());
+// stop.addEventListener("click", () => {
+//   audio.pause();
+//   audio.currentTime = 0;
+// });
 
-audio.addEventListener("timeupdate", () => {
-  time.innerText = audio.currentTime;
-});
+// audio.addEventListener("timeupdate", () => {
+//   time.innerText = audio.currentTime;
+// });
 
-volume.addEventListener("change", () => (audio.volume = volume.value));
+// volume.addEventListener("change", () => (audio.volume = volume.value));
+
+/* OOPS */
+// function Rectangle(name, width, height) {
+//   this.name = name;
+//   this.width = width;
+//   this.height = height;
+//   this.area = function () {
+//     return width * height;
+//   };
+// }
+
+//creating objects using prototype
+
+// function Rectangle(name, width, height) {
+//   this.name = name;
+//   this.width = width;
+//   this.height = height;
+// }
+
+// Rectangle.prototype.area = function () {
+//   return this.width * this.height;
+// };
+
+// const rect = new Rectangle("rect1", 20, 30);
+// console.log(rect);
+// console.log(rect.area());
+// console.log(Object.prototype);
+// console.log(Object.getPrototypeOf(rect));
+
+// Inheritance using prototypical inheritance
+function Shape(name) {
+  //Shape constructor
+  this.name = name;
+}
+
+Shape.prototype.logName = function () {
+  //Shape method
+  console.log(`${this.name}`);
+};
+function Rectangle(name, width, height) {
+  //Rectangle constructor
+  Shape.call(this, name);
+  this.width = width;
+  this.height = height;
+}
+
+Rectangle.prototype = Object.create(Shape.prototype); // Inherting shape method
+
+function Circle(name, radius) {
+  //Circle method
+  Shape.call(this, name);
+  this.radius = radius;
+}
+
+const rect = new Rectangle("rect1", 20, 30);
+const circ = new Circle("rect1", 20, 30);
+console.log(rect);
+console.log(circ);
+rect.logName(); // invoking method
