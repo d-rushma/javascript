@@ -455,32 +455,61 @@ convert json format to object literal use JSON.parse(str)
 // console.log(Object.getPrototypeOf(rect));
 
 // Inheritance using prototypical inheritance
-function Shape(name) {
-  //Shape constructor
-  this.name = name;
-}
+// function Shape(name) {
+//   //Shape constructor
+//   this.name = name;
+// }
 
-Shape.prototype.logName = function () {
-  //Shape method
-  console.log(`${this.name}`);
-};
-function Rectangle(name, width, height) {
-  //Rectangle constructor
-  Shape.call(this, name);
-  this.width = width;
-  this.height = height;
-}
+// Shape.prototype.logName = function () {
+//   //Shape method
+//   console.log(`${this.name}`);
+// };
+// function Rectangle(name, width, height) {
+//   //Rectangle constructor
+//   Shape.call(this, name);
+//   this.width = width;
+//   this.height = height;
+// }
 
-Rectangle.prototype = Object.create(Shape.prototype); // Inherting shape method
+// Rectangle.prototype = Object.create(Shape.prototype); // Inherting shape method
 
-function Circle(name, radius) {
-  //Circle method
-  Shape.call(this, name);
-  this.radius = radius;
-}
+// function Circle(name, radius) {
+//   //Circle method
+//   Shape.call(this, name);
+//   this.radius = radius;
+// }
 
-const rect = new Rectangle("rect1", 20, 30);
-const circ = new Circle("rect1", 20, 30);
-console.log(rect);
-console.log(circ);
-rect.logName(); // invoking method
+// const rect = new Rectangle("rect1", 20, 30);
+// const circ = new Circle("rect1", 20, 30);
+// console.log(rect);
+// console.log(circ);
+// rect.logName(); // invoking method
+
+// function Player(name) {
+//   this.name = name;
+//   this.lvl = 0;
+//   this.points = 0;
+// }
+// Player.prototype.gainXp = function (num) {
+//   this.points += num;
+//   if (this.points >= 10) {
+//     this.lvl++;
+//     this.points -= 10;
+//   }
+// };
+// Player.prototype.describe = function () {
+//   console.log(
+//     `${this.name} is level ${this.lvl} with ${this.points} experience points`
+//   );
+// };
+// let player1 = new Player("Bob");
+// let player2 = new Player("Alice");
+// player1.gainXp(5);
+// player2.gainXp(7);
+// player1.gainXp(3);
+// player2.gainXp(2);
+// player1.gainXp(8);
+// player2.gainXp(4);
+// player1.describe();
+
+/* CLASSES */
